@@ -1,0 +1,254 @@
+External
+ categoria,
+ finalizar,
+ informacion
+Asks
+ Ask info: '¿Desea saber que es una infraccion de transito?'
+ Domain 'si', 'no'
+ Because 'Me permite saber si desea conocer informacion adicional antes de seguir al resto de preguntas'
+ Ask multa: '¿Cuantos salarios minimos se debe cancelar?'
+ Domain 4,8,15,30,45
+ Because 'Me indica la cantidad a relacionar'
+ Ask puntos: '¿Cuantos puntos pierde el conductor?'
+ Domain 0,1,2,3,6
+ Because 'Me indica los puntos perdidos' 
+ Ask tipo: '¿De que grado fue la falta cometida?' 
+ Domain 'Grado 1', 'Grado 2', 'Grado 3', 'Grado 4', 'Grado 5'
+ Because 'Me permite establecer un nivel de gravedad de la infraccion'
+ Ask numeral: '¿Que item de los que se muestran a continuacion desea consultar?'
+ Domain 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+ Because 'Me permite asociar el numeral'
+ Ask reconsulta: '¿Desea realizar otra consulta?'
+ Domain 'si', 'no'
+ Because 'Me permite saber si el usuario realizara o no otra consulta'
+Rules
+Rule 1
+ If info = 'si'
+  then
+   informacion := 'si'
+  Actions
+    Display 'Es un incumplimiento de la normativa de circulacion de vehiculos que acarrea una sacion administrativa o penal.'
+ End;
+
+
+Rule 2
+ If multa=4 and puntos=0 and tipo='Grado 1' and numeral=1
+  then
+   categoria:='A'
+  Actions
+   Display 'La categoria es A, ya que se debe pagar una multa de 4 salarios minimos y no se pierde puntos.'
+   Display 'El numeral consultado dice: A.1 No transitar por la derecha de la vía'
+ End;
+Rule 3
+ If multa=4 and puntos=0 and tipo='Grado 1' and numeral=2
+  then
+   categoria:='A'
+  Actions
+   Display 'La categoria es A, ya que se debe pagar una multa de 4 salarios minimos y no se pierde puntos.'
+   Display 'El numeral consultado dice: A.2 Agarrarse de otro vehículo en circulación'
+ End;
+Rule 4
+ If multa=4 and puntos=0 and tipo='Grado 1' and numeral=3
+  then
+   categoria:='A'
+  Actions
+   Display 'La categoria es A, ya que se debe pagar una multa de 4 salarios minimos y no se pierde puntos.'
+   Display 'El numeral consultado dice: A.3 Transportar personas o cosas que disminuyan su visibilidad e incomoden la conducción'
+ End;
+Rule 5
+ If multa=4 and puntos=0 and tipo='Grado 1' and numeral=4
+  then
+   categoria:='A'
+  Actions
+   Display 'La categoria es A, ya que se debe pagar una multa de 4 salarios minimos y no se pierde puntos.'
+   Display 'El numeral consultado dice: A.4 Transitar por andenes y demás lugares destinados al tránsito de peatones'
+ End;
+Rule 6
+ If multa=4 and puntos=0 and tipo='Grado 1' and numeral=5
+  then
+   categoria:='A'
+  Actions
+   Display 'La categoria es A, ya que se debe pagar una multa de 4 salarios minimos y no se pierde puntos.'
+   Display 'El numeral consultado dice: A.5 No respetar las señales de tránsito'
+ End;
+
+
+Rule 7
+ If multa=8 and puntos=1 and tipo='Grado 2' and numeral=6
+  then
+   categoria:='B'
+  Actions
+   Display 'La categoria es B, ya que se debe pagar una multa de 8 salarios minimos y se pierde 1 punto.'
+   Display 'El numeral consultado dice: B.1 Conducir un vehículo sin llevar consigo la licencia de conducción'
+ End;
+Rule 8
+ If multa=8 and puntos=1 and tipo='Grado 2' and numeral=7
+  then
+   categoria:='B'
+  Actions
+   Display 'La categoria es B, ya que se debe pagar una multa de 8 salarios minimos y se pierde 1 punto.'
+   Display 'El numeral consultado dice: B.2 Conducir un vehículo con la licencia de conducción vencida'
+ End;
+Rule 9
+ If multa=8 and puntos=1 and tipo='Grado 2' and numeral=8
+  then
+   categoria:='B'
+  Actions
+   Display 'La categoria es B, ya que se debe pagar una multa de 8 salarios minimos y se pierde 1 punto.'
+   Display 'El numeral consultado dice: B.3 Sin placas, o sin el permiso vigente expedido por autoridad de tránsito'
+ End;
+Rule 10
+ If multa=8 and puntos=1 and tipo='Grado 2' and numeral=9
+  then
+   categoria:='B'
+  Actions
+   Display 'La categoria es B, ya que se debe pagar una multa de 8 salarios minimos y se pierde 1 punto.'
+   Display 'El numeral consultado dice: B.4 Con placas adulteradas'
+ End;
+Rule 11
+ If multa=8 and puntos=1 and tipo='Grado 2' and numeral=10
+  then
+   categoria:='B'
+  Actions
+   Display 'La categoria es B, ya que se debe pagar una multa de 8 salarios minimos y se pierde 1 punto.'
+   Display 'El numeral consultado dice: B.5 Con una sola placa, o sin el permiso vigente expedido por autoridad de tránsito'
+ End;
+
+
+
+Rule 12
+ If multa=15 and puntos=2 and tipo='Grado 3' and numeral=11
+  then
+   categoria:='C'
+  Actions
+   Display 'La categoria es C, ya que se debe pagar una multa de 15 salarios minimos y se pierden 2 puntos.'
+   Display 'El numeral consultado dice: C.1 Presentar licencia de conducción adulterada o ajena, lo cual dará lugar a la inmovilización del vehículo'
+ End;
+Rule 13
+ If multa=15 and puntos=2 and tipo='Grado 3' and numeral=12
+  then
+   categoria:='C'
+  Actions
+   Display 'La categoria es C, ya que se debe pagar una multa de 15 salarios minimos y se pierden 2 puntos.'
+   Display 'El numeral consultado dice: C.2 Estacionar un vehículo en sitios prohibidos'
+ End;
+Rule 14
+ If multa=15 and puntos=2 and tipo='Grado 3' and numeral=13
+  then
+   categoria:='C'
+  Actions
+   Display 'La categoria es C, ya que se debe pagar una multa de 15 salarios minimos y se pierden 2 puntos.'
+   Display 'El numeral consultado dice: C.3 Bloquear una calzada o intersección con un vehículo, salvo cuando el bloqueo obedezca a la ocurrencia de un accidente de tránsito'
+ End;
+Rule 15
+ If multa=15 and puntos=2 and tipo='Grado 3' and numeral=14
+  then
+   categoria:='C'
+  Actions
+   Display 'La categoria es C, ya que se debe pagar una multa de 15 salarios minimos y se pierden 2 puntos.'
+   Display 'El numeral consultado dice: C.4 Estacionar un vehículo sin tomar las debidas precauciones o sin colocar a la distancia señalada por este código, las señales de peligro reglamentarias'
+ End;
+Rule 16
+ If multa=15 and puntos=2 and tipo='Grado 3' and numeral=15
+  then
+   categoria:='C'
+  Actions
+   Display 'La categoria es C, ya que se debe pagar una multa de 15 salarios minimos y se pierden 2 puntos.'
+   Display 'El numeral consultado dice: C.5 No reducir la velocidad según lo indicado por este código, cuando transite por un cruce escolar en los horarios y días de funcionamiento de la institución educativa'
+ End;
+
+
+
+Rule 17
+ If multa=30 and puntos=3 and tipo='Grado 4' and numeral=16
+  then
+   categoria:='D'
+  Actions
+   Display 'La categoria es D, ya que se debe pagar una multa de 30 salarios minimos y se pierden 3 puntos.'
+   Display 'El numeral consultado dice: D.1 Guiar un vehículo sin haber obtenido la licencia de conducción correspondiente'
+ End;
+Rule 18
+ If multa=30 and puntos=3 and tipo='Grado 4' and numeral=17
+  then
+   categoria:='D'
+  Actions
+    Display 'La categoria es D, ya que se debe pagar una multa de 30 salarios minimos y se pierden 3 puntos.'
+   Display 'El numeral consultado dice: D.2 Conducir sin portar los seguros ordenados por la ley'
+ End;
+Rule 19
+ If multa=30 and puntos=3 and tipo='Grado 4' and numeral=18
+  then
+   categoria:='D'
+  Actions
+    Display 'La categoria es D, ya que se debe pagar una multa de 30 salarios minimos y se pierden 3 puntos.'
+   Display 'El numeral consultado dice: D.3 Transitar en sentido contrario al estipulado para la vía, calzada o carril'
+ End;
+Rule 20
+ If multa=30 and puntos=3 and tipo='Grado 4' and numeral=19
+  then
+   categoria:='D'
+  Actions
+    Display 'La categoria es D, ya que se debe pagar una multa de 30 salarios minimos y se pierden 3 puntos.'
+   Display 'El numeral consultado dice: D.4 No detenerse ante una luz roja o amarilla de semáforo, una señal de PARE o un semáforo intermitente en rojo'
+ End;
+Rule 21
+ If multa=30 and puntos=3 and tipo='Grado 4' and numeral=20
+  then
+   categoria:='D'
+  Actions
+    Display 'La categoria es D, ya que se debe pagar una multa de 30 salarios minimos y se pierden 3 puntos.'
+   Display 'El numeral consultado dice: D.5 Conducir un vehículo sobre aceras, plazas, vías peatonales, separadores, bermas,'
+     Display 'demarcaciones de canalización, zonas verdes o vías especiales para vehículos no motorizados'
+ End;
+
+
+Rule 22
+ If multa=45 and puntos=6 and tipo='Grado 5' and numeral=21
+  then
+   categoria:='E'
+  Actions
+   Display 'La categoria es E, ya que se debe pagar una multa de 45 salarios minimos y se pierden 6 puntos.'
+   Display 'El numeral consultado dice: E.1 Proveer combustible a vehículos de servicio público con pasajeros a bordo'
+ End;
+Rule 23
+ If multa=45 and puntos=6 and tipo='Grado 5' and numeral=22
+  then
+   categoria:='E'
+  Actions
+   Display 'La categoria es E, ya que se debe pagar una multa de 45 salarios minimos y se pierden 6 puntos.'
+   Display 'El numeral consultado dice: E.2 Negarse a prestar el servicio público sin causa justificada, siempre que dicha negativa cause alteración del orden público'
+ End;
+Rule 24
+ If multa=45 and puntos=6 and tipo='Grado 5' and numeral=23
+  then
+   categoria:='E'
+  Actions
+   Display 'La categoria es E, ya que se debe pagar una multa de 45 salarios minimos y se pierden 6 puntos.'
+   Display 'El numeral consultado dice: E.3 Conducir en estado de embriaguez o bajo los efectos de sustancias alucinógenas'
+ End;
+
+
+Rule 25
+ If reconsulta = 'si'
+  then
+   finalizar := 'no'
+  Actions
+   Reset finalizar
+ End;
+Rule 26
+ If reconsulta = 'no'
+  then
+   finalizar := 'si'
+  Actions
+   Display 'Gracias por realizar la consulta'
+ End;
+
+Actions
+Repeat
+ Reset all
+ Display Image('mul1.bmp')
+ Find informacion
+ Find categoria
+ Find finalizar
+ Untilknown finalizar
+End.
