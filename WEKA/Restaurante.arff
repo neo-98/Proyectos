@@ -1,0 +1,37 @@
+@relation MaquinaCNC
+
+@attribute alternativa{si,no}
+
+@attribute bar{si,no}
+
+@attribute viernes/sabado{si,no}
+
+@attribute hambriento{si,no}
+
+@attribute clientes{ninguno,algunos,lleno}
+
+@attribute precio{$,$$,$$$}
+
+@attribute lluvia{si,no}
+
+@attribute reserva{si,no}
+
+@attribute tipo {frances,tailandes,hambur,italiano}
+
+@attribute tiempo{0-10,10-30,30-60,>60}
+
+@attribute meta{si,no}
+
+@Data
+si no no si algunos $$$ no si frances   0-10  si
+si no no si lleno   $   no no tailandes 30-60 no
+no si no no algunos $   no no hambur    0-10  si
+si no si si lleno   $   si no tailandes 10-30 si
+si no si no lleno   $$$ no si frances    >60   no
+no si no si algunos $$  si si italiano  0-10  si
+no si no no ninguno $   si no hambur    0-10  no
+no no no si algunos $$  si si tailandes 0-10  si
+no si si no lleno   $   si no hambur    >60   no
+si si si si lleno   $$$ no si italiano  10-30 no
+
+
