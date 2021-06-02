@@ -1,0 +1,5 @@
+Kong La Isla Calavera,120,Mayores,2017
+La momia,125,Todo Publico,1999
+xXx Reactivado,110,Todo Publico,2017
+El rey Leon,90,Todo Publico,2011
+Toy Story 3,100,Infantil,2010

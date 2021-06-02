@@ -1,0 +1,5 @@
+El Conjuro,112,Mayores,2013
+El Aro,145,Mayores,2012
+REC,78,Mayores,2007
+El Exorcismo de Emily Rose,122,Mayores,2005
+Actividad Paranormal,86,Mayores,2007

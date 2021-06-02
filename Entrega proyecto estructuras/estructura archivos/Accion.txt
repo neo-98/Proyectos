@@ -1,0 +1,5 @@
+Logan,137,Mayores,2017
+Rapidos y Furiosos 8,136,Mayores,2017
+Gladiador,155,Mayores,2000
+Piratas del Caribe,153,Todo publico,2017
+Matrix,150,Todo publico,1999
